@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fbe3e8;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .poem-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .verse {
+            display: none;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .verse.active {
+            display: block;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d63384;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b32a6d;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="poem-container">
+        <h1>Para Mi Amor</h1>
+        <div class="verse active">Tu piel morena, como un dulce atardecer,<br> brilla en mi universo, un sueño por
+            recorrer.<br> Tus bellos ojos, dos estrellas que guían,<br> destellos de amor en mi noche infinita.<br> <img
+                src="v5.jpg" alt="Nuestra foto"></div>
+        <div class="verse">Tus cachetes rosados, mi refugio ideal,<br> almohadas de sueños en un mundo irreal.<br> Y
+            cuando sonríes, el cosmos suspira,<br> Sheldon calcularía que es pura energía.<br> <img src="v1.jpg"
+                alt="Nuestra foto"></div>
+        <div class="verse">Eres mi ecuación que siempre resulta,<br> mi teoría del todo, la respuesta absoluta.<br> Como
+            Penny en la historia de un nerd,<br> llegaste a mi vida para hacerla valer.<br> <img src="v2.jpg"
+                alt="Nuestra foto"></div>
+        <div class="verse">Si este amor fuera un experimento a probar,<br> el resultado es claro: ¡te amo sin dudar!<br>
+            Eres mi Soft Kitty, mi física cuántica,<br> mi mejor descubrimiento, mi única lógica.<br> <img src="v3.jpg"
+                alt="Nuestra foto"></div>
+        <div class="verse">Hoy celebramos 17 meses de amor sincero,<br> cada instante contigo es un mundo entero.<br>
+            Que vengan más risas, besos y abrazos,<br> porque a tu lado todo es un lazo eterno.<br> <img src="v4.jpg"
+                alt="Nuestra foto"></div>
+        <button onclick="nextVerse()">Siguiente</button>
+    </div>
+    <div class="footer">Con amor, para ti 💖</div>
+    <script>
+        let currentVerse = 0;
+        const verses = document.querySelectorAll('.verse');
+
+        function nextVerse() {
+            verses[currentVerse].classList.remove('active');
+            currentVerse = (currentVerse + 1) % verses.length;
+            verses[currentVerse].classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
