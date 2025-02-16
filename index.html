@@ -10,7 +10,8 @@
             font-family: 'Arial', sans-serif;
             background-color: #fbe3e8;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
+            margin: 0;
         }
 
         .poem-container {
@@ -19,7 +20,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: inline-block;
-            max-width: 600px;
+            max-width: 90%;
+            width: 400px;
             position: relative;
         }
 
@@ -48,6 +50,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
         }
 
         button:hover {
@@ -59,33 +62,66 @@
             border-radius: 10px;
             margin-top: 15px;
         }
+
+        @media (max-width: 480px) {
+            .poem-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .verse {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 
-<body>
+<body onclick="unmuteMusic()">
+    <audio id="background-music" src="Cuco-Amor-para-siempre-_-letra-_.mp3" autoplay loop muted></audio>
     <div class="poem-container">
         <h1>Para Mi Amor</h1>
-        <div class="verse active">Tu piel morena, como un dulce atardecer,<br> brilla en mi universo, un sueño por
+        <div class="verse active">Este es un pequeño detalle ya que por el momento no puedo estar contigo para esta
+            fecha <br>
+            se que pronto lo estaremos y podremos celebrar un mes más juntos.
+        </div>
+        <div class="verse">Tu piel morena, como un dulce atardecer,<br> brilla en mi universo, un sueño por
             recorrer.<br> Tus bellos ojos, dos estrellas que guían,<br> destellos de amor en mi noche infinita.<br> <img
-                src="v5.jpg" alt="Nuestra foto"></div>
+                src="v1.jpg" alt="Nuestra foto"></div>
         <div class="verse">Tus cachetes rosados, mi refugio ideal,<br> almohadas de sueños en un mundo irreal.<br> Y
-            cuando sonríes, el cosmos suspira,<br> Sheldon calcularía que es pura energía.<br> <img src="v1.jpg"
+            cuando sonríes, el cosmos suspira,<br> Sheldon calcularía que es pura energía.<br> <img src="v2.jpg"
                 alt="Nuestra foto"></div>
         <div class="verse">Eres mi ecuación que siempre resulta,<br> mi teoría del todo, la respuesta absoluta.<br> Como
-            Penny en la historia de un nerd,<br> llegaste a mi vida para hacerla valer.<br> <img src="v2.jpg"
+            Penny en la historia de un nerd,<br> llegaste a mi vida para hacerla valer.<br> <img src="v3.jpg"
                 alt="Nuestra foto"></div>
         <div class="verse">Si este amor fuera un experimento a probar,<br> el resultado es claro: ¡te amo sin dudar!<br>
-            Eres mi Soft Kitty, mi física cuántica,<br> mi mejor descubrimiento, mi única lógica.<br> <img src="v3.jpg"
+            Eres mi Soft Kitty, mi física cuántica,<br> mi mejor descubrimiento, mi única lógica.<br> <img src="v4.jpg"
                 alt="Nuestra foto"></div>
+        <div class="verse">Nuestro amor brilla como Millonarios en la cancha,<br> con pasión, entrega y sin
+            revancha.<br> Cada gol es un latido sincero,<br> un amor azul que crece entero.<br> <img src="v5.jpg"
+                alt="Nuestra foto"></div>
+        <div class="verse">Como los embajadores en cada jugada,<br> tú y yo juntos, sin miedo a nada.<br> Eres mi copa,
+            mi gran trofeo,<br> mi título eterno, mi amor sincero.<br> <img src="v6.jpg" alt="Nuestra foto"></div>
         <div class="verse">Hoy celebramos 17 meses de amor sincero,<br> cada instante contigo es un mundo entero.<br>
-            Que vengan más risas, besos y abrazos,<br> porque a tu lado todo es un lazo eterno.<br> <img src="v4.jpg"
+            Que vengan más risas, besos y abrazos,<br> porque a tu lado todo es un lazo eterno.<br> <img src="v7.jpg"
                 alt="Nuestra foto"></div>
+
         <button onclick="nextVerse()">Siguiente</button>
     </div>
-    <div class="footer">Con amor, para ti 💖</div>
+    <div class="footer">Con amor, para ti 🩵</div>
     <script>
         let currentVerse = 0;
         const verses = document.querySelectorAll('.verse');
+        const music = document.getElementById('background-music');
+
+        function unmuteMusic() {
+            music.muted = false;
+            document.body.onclick = null;
+        }
 
         function nextVerse() {
             verses[currentVerse].classList.remove('active');
